@@ -28,17 +28,18 @@ let i = 0
 for (const key in competences) {
     h2[i].innerText = h2[i].innerText + ": " + competences[key]
     console.log(h2[i].innerText);
+    
+    let competenceLength = competences[key].length
+    let short = competences[key].substr(0, competenceLength-1)
+    if (short > 50 && short < 100) {
+        h2[i].style.background = 'green'
+        h2[i].style.color = 'white'
+    } else if (short == 100) {
+        h2[i].style.background = 'gold'
+    } else if (short < 50) {
+        h2[i].style.background = 'red'
+    }
     i++
-    // if (competences[key] = '50%') {
-    //     h2[i].setAttribute("style", "background-color: black;") 
-    // }else if (competences[key] > '50%') {
-    //     h2[i].setAttribute("style", "background-color: green; color:white;") 
-    // }else if (competences[key] < '50%') {
-    //     h2[i].setAttribute("style", "background-color: red;")
-    // }else if (competences[key] == '100%') {
-    //     h2[i].setAttribute("style", "background-color: gold; color:black;") 
-        
-    // }
     
 }
 
